@@ -5,8 +5,10 @@ spring:
     password:
     platform: mysql
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     properties:
       javax:
         persistence:
@@ -14,4 +16,4 @@ spring:
             create-source: metadata
             scripts:
               action: create
-              create-target: scripts/database-create.sql
+              create-target: src/main/scripts/database-create.sql
